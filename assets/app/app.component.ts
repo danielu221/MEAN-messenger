@@ -7,9 +7,4 @@ import { Message } from "./messages/message.model"
     styleUrls:['app.component.css']
 })
 export class AppComponent {
-    messages:Message[]=
-    [
-      new Message ("Content of message1", "Matt"),
-      new Message ("Content of message2", "Matt")
-    ];
 }
