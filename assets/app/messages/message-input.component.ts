@@ -6,8 +6,7 @@ import { MessageService } from "./message.service"
 @Component({
     selector: 'app-message-input',
     templateUrl: './message-input.component.html',
-    styleUrls:['message-input.component.css'],
-    providers:[MessageService]
+    styleUrls:['message-input.component.css']
 })
 export class MessageInputComponent {
   constructor(private messageService:MessageService){}

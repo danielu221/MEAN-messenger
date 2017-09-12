@@ -1,5 +1,6 @@
-import { Component,Input ,Output,EventEmitter} from '@angular/core';
+import { Component,OnInit} from '@angular/core';
 import { Message } from "./message.model"
+import { MessageService } from "./message.service"
 
 @Component({
     selector: 'app-message-list',
@@ -10,14 +11,17 @@ import { Message } from "./message.model"
           [message]="message"
           (editClicked)="message.content= $event"></app-message>
         </div>
-    `     
+    `
       ,
     styleUrls:['message.component.css']
 })
-export class MessageListComponent {
-    messages:Message[]=
-    [
-      new Message ("Content of message1", "Matt"),
-      new Message ("Content of message2", "Matt")
-    ];
+export class MessageListComponent implements OnInit {
+    messages:Message[];
+
+    constructor(private messageService:MessageService){
+    }
+
+    ngOnInit(){
+      this.messages=this.messageService.getMessages();
+    }
 }
