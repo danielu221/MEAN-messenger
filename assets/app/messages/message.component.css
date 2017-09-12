@@ -1,0 +1,10 @@
+.config{
+  display:inline-block;
+  text-align:right;
+  font-size:12px;
+  width:19%;
+}
+.author{
+  display:inline-block;
+  width:80%;
+}
