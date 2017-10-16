@@ -11,7 +11,6 @@ import { Router } from "@angular/router";
 
 export class SigninComponent{
   myForm: FormGroup;
-
   constructor(private authService:AuthService,private router:Router){}
 
   ngOnInit(){
@@ -25,16 +24,19 @@ export class SigninComponent{
 
   onSubmit(){
     const user = new User (this.myForm.value.email,this.myForm.value.password);
+    console.log(user.firstName+" "+user.lastName);
     this.authService.signin(user)
       .subscribe(
         data => {
             localStorage.setItem('token',data.token);
             localStorage.setItem('userId',data.userId);
+            localStorage.setItem('userName',data.userMail);
             this.router.navigateByUrl('/')
         },
         error => console.error(error)
       );
-    console.log(this.myForm);
+
+
     this.myForm.reset();
   }
 }
