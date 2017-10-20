@@ -9,5 +9,5 @@
 
 .modal-content{
   border-radius: 15px;
-  border: 7px rgba(255,0,0,0.4);
+  border: 7px solid rgba(255,0,0,0.4);
 }
