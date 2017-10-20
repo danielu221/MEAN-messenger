@@ -14,11 +14,9 @@ import { routing } from "./app.routing"
 import { LogoutComponent } from "./auth/logout.component"
 import { SigninComponent } from "./auth/signin.component"
 import { SignupComponent } from "./auth/signup.component"
-<<<<<<< HEAD
-import { ErrorComponent } from "./errors/error.component"
-=======
 import { AuthService } from "./auth/auth.service"
->>>>>>> master
+import { ErrorComponent } from "./errors/error.component"
+import { ErrorService } from "./errors/error.service"
 
 @NgModule({
     declarations: [
@@ -36,7 +34,7 @@ import { AuthService } from "./auth/auth.service"
 
     ],
     imports: [BrowserModule,FormsModule,routing,ReactiveFormsModule,HttpModule],
-    providers:[AuthService],
+    providers:[AuthService,ErrorService],
     bootstrap: [AppComponent]
 })
 export class AppModule {
